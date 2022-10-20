@@ -73,6 +73,7 @@ const Td = styled.td`
 
 const Span = styled.span`
   text-decoration: underline;
+  color: black;
 `
 
 function Details() {
