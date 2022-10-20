@@ -4,7 +4,6 @@ import styled from '@emotion/styled'
 import { useNavigate } from 'react-router-dom'
 import useWindowDimensions from '../utils/useWindowDimensions'
 import Loading from '../components/Loading'
-import { LinkBack } from '../Styled'
 
 const Section = styled.section`
   border-radius: 8px;
@@ -112,7 +111,6 @@ function Preview() {
 
   return (
     <Section>
-      <LinkBack to="/">Kembali</LinkBack>
       <H1>Preview</H1>
       <Table>
         <Thead>

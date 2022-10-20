@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import Loading from '../components/Loading'
 import { supabase } from '../supabaseClient'
 import styled from '@emotion/styled'
-import { H1, LinkBack } from '../Styled'
+import { H1 } from '../Styled'
 import NotFound from '../components/NotFound'
 
 const Container = styled.div`
@@ -109,7 +109,6 @@ function Details() {
 
   return (
     <Container>
-      <LinkBack to="/preview">Kembali</LinkBack>
       <H1>
         User Details <Span>{data.nama}</Span>
       </H1>
