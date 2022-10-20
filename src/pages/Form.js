@@ -142,28 +142,28 @@ function Form() {
       <FormText onSubmit={handleSubmit(onSubmit)}>
         {/* NAMA */}
         <InputText
-          {...register('nama', { required: false })}
+          {...register('nama', { required: true })}
           placeholder="Nama"
         />
         {errors.nama && <Errors>Nama di isi </Errors>}
         {/* TTL */}
         <Span>
           <InputTextTTL
-            {...register('tempat', { required: false })}
+            {...register('tempat', { required: true })}
             placeholder="Jakarta"
           />
           <InputNumberTanggal
             type="number"
-            {...register('tanggal', { required: false, min: 0, max: 31 })}
+            {...register('tanggal', { required: true, min: 0, max: 31 })}
             placeholder="1"
           />
           <InputTextTTL
-            {...register('bulan', { required: false })}
+            {...register('bulan', { required: true })}
             placeholder="Juni"
           />
           <InputNumberTTL
             type="number"
-            {...register('tahun', { required: false, min: 1111, max: 2050 })}
+            {...register('tahun', { required: true, min: 1111, max: 2050 })}
             placeholder="2003"
           />
         </Span>
@@ -176,12 +176,12 @@ function Form() {
           cols="20"
           rows="6"
           placeholder="Alamat"
-          {...register('alamat', { required: false, minLength: 7 })}
+          {...register('alamat', { required: true, minLength: 7 })}
         ></TextArea>
         {errors.alamat && <Errors>Alamat di Isi Minimal length 7</Errors>}
         {/* JENIS KELAMIN */}
         <Select
-          {...register('jenis_kelamin', { required: false })}
+          {...register('jenis_kelamin', { required: true })}
           defaultValue={''}
         >
           <option value="" defaultValue disabled hidden>
@@ -193,19 +193,19 @@ function Form() {
         {errors.jenis_kelamin && <Errors>Pilih jenis kelamin anda</Errors>}
         {/* AGAMA */}
         <InputText
-          {...register('agama', { required: false })}
+          {...register('agama', { required: true })}
           placeholder="Agama"
         />
         {errors.agama && <Errors>Agama di isi</Errors>}
         {/* KEWARGANEGARAAN */}
         <InputText
-          {...register('kewarganegaraan', { required: false })}
+          {...register('kewarganegaraan', { required: true })}
           placeholder="Kewarganegaraan"
         />
         {errors.kewarganegaraan && <Errors>Kewarganegaraan di isi</Errors>}
         {/* PENDIDIKAN */}
         <InputText
-          {...register('pendidikan', { required: false })}
+          {...register('pendidikan', { required: true })}
           placeholder="Pendidikan"
         />
         {errors.pendidikan && <Errors>Pendidikan di isi</Errors>}
@@ -216,7 +216,7 @@ function Form() {
           name="phone"
           placeholder="No Telfon"
           value={noHp}
-          {...register('no_tlp', { required: false, maxLength: 13 })}
+          {...register('no_tlp', { required: true, maxLength: 13 })}
           onChange={handleChangePhoneNumber}
         />
         {errors.no_tlp && <Errors>No Telfon di isi</Errors>}
