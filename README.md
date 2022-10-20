@@ -5,5 +5,5 @@
 ## Tech
 
 1. React.js v18
-2. Supbase
+2. Supabase
 3. Emotion.js (Styled Components)
