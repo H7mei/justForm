@@ -13,6 +13,7 @@ import {
 import generateUUID from '../utils/generateUUID'
 import { getToken, setToken } from '../utils/cookiesHooks'
 import styled from '@emotion/styled'
+import Loading from '../components/Loading'
 
 const Span = styled.span`
   display: grid;
@@ -97,6 +98,7 @@ const Errors = styled.span`
 function Form() {
   const [sukses, setSukses] = useState(false)
   const [noHp, setNoHp] = useState('')
+  const [loading, setLoading] = useState(false)
 
   const {
     register,
@@ -105,6 +107,7 @@ function Form() {
   } = useForm()
 
   const onSubmit = async (e) => {
+    setLoading(true)
     await supabase
       .from('forms')
       .insert({
@@ -122,12 +125,17 @@ function Form() {
       .then(() => {
         setSukses(true)
         setToken(generateUUID())
+        setLoading(false)
       })
   }
 
   const handleChangePhoneNumber = (e) => {
     const result = e.target.value.replace(/\D/g, '')
     setNoHp(result)
+  }
+
+  if (loading) {
+    return <Loading />
   }
 
   if (sukses || getToken()) {
