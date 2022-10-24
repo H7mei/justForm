@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { useNavigate } from 'react-router-dom'
-import { CenterImg, H1, Img } from '../Styled'
+import { CenterImg, H1 } from '../Styled'
 
 const Section = styled.section`
   display: flex;

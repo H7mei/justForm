@@ -88,6 +88,13 @@ const Errors = styled.span`
   font-style: italic;
 `
 
+const SVG = styled.svg`
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+`
+
 function Form() {
   const [sukses, setSukses] = useState(false)
   const [noHp, setNoHp] = useState('')
@@ -138,7 +145,7 @@ function Form() {
   return (
     <Container>
       <CenterImg>
-        <svg
+        <SVG
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"
           width={500}
@@ -336,7 +343,7 @@ function Form() {
             strokeOpacity={1}
             strokeMiterlimit={4}
           />
-        </svg>
+        </SVG>
       </CenterImg>
       <FormText onSubmit={handleSubmit(onSubmit)}>
         {/* NAMA */}
